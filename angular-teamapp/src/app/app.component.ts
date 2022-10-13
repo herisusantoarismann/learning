@@ -52,7 +52,6 @@ export class AppComponent {
       }
     }
 
-    console.log(this.teams);
     this.members = [];
     this.numberOfTeams = '';
   }
