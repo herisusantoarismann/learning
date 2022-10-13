@@ -9,4 +9,12 @@ export class AppComponent {
   title = 'angular-teamapp';
   newMemberName: string = '';
   members: string[] = [];
+
+  onInput(member: string) {
+    this.newMemberName = member;
+  }
+  addMember() {
+    this.members.push(this.newMemberName);
+    this.newMemberName = '';
+  }
 }
