@@ -33,4 +33,8 @@ export class TaskService {
 
     return this.http.delete<Task>(url);
   }
+
+  addTask(task: Task): Observable<Task> {
+    return this.http.post<Task>(this.apiUrl, task, httpOptions);
+  }
 }
