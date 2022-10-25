@@ -1,0 +1,66 @@
+@background-color: #f4f4f4;
+@font-family: Tahoma;
+@primary-color: #3b5998;
+@secondary-color: #20b2aa;
+@line-height:1em + 1em;
+
+// Text color mixin
+.text-color(@color) when (lightness(@color) >= 50%) {
+  color: black;
+}
+.text-color(@color) when (lightness(@color) < 50%) {
+  color: white;
+}
+
+body {
+  font-family: @font-family;
+  background-color: @background-color;
+  line-height: @line-height;
+}
+
+.primary-text {
+  color: @primary-color;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  .border-radius(2px);
+}
+
+h1,
+h3 {
+  .bordered;
+}
+
+.primary-btn:extend(.btn) {
+  background: @primary-color;
+  .text-color(@primary-color);
+}
+
+.border-radius(@radius) {
+  border-radius: @radius * 2px;
+}
+
+.bordered {
+  border-top: dotted 1px #000;
+  border-bottom: solid 2px #000;
+}
+
+ul#menu {
+  list-style: none;
+  background-color: lighten(@secondary-color, 50%);
+
+  li {
+    padding: 10px 0;
+
+    a {
+      text-decoration: none;
+      color: @secondary-color;
+
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}
