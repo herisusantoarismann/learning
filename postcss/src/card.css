@@ -1,0 +1,14 @@
+.card {
+  padding: 20px;
+  margin-top: 20px;
+  border: $borderWidth solid $borderColor;
+  background-image: resolve("nba.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: width("nba.png");
+  height: height("nba.png");
+
+  h2 {
+    color: red;
+  }
+}
